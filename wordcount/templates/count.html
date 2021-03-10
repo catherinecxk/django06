@@ -10,5 +10,17 @@
 <h2>your words:</h2>
 {{ words }}
 
+<form action="{% url 'countword' %}">
+    <textarea cols="100" rows="10"  name="fulltext"></textarea>
+    <p></p>
+    <input type="submit" value="count!"/>
+</form>
+
+<hr/>
+{% for word,count in worddict %}
+    {{ word }} - {{ count }}
+    <br />
+{% endfor %}
+
 </body>
 </html>
